@@ -16,3 +16,4 @@ func RstHandler(w http.ResponseWriter, data interface{}) {
 	}
 	w.Write(bytes)
 }
+
