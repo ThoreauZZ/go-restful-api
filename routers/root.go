@@ -18,8 +18,8 @@ func service(w http.ResponseWriter, r *http.Request) {
 }
 
 func UserResource() *mux.Router{
-	router := mux.NewRouter().StrictSlash(true)
+	router := mux.NewRouter().StrictSlash(false)
 	sub := router.PathPrefix("/api/v1").Subrouter()
-	sub.HandleFunc("/user", service)
+	sub.HandleFunc("/{path}", service)
 	return router
 }
